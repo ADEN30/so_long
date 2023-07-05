@@ -6,7 +6,7 @@
 /*   By: agallet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 16:38:37 by agallet           #+#    #+#             */
-/*   Updated: 2023/03/07 13:44:14 by agallet          ###   ########.fr       */
+/*   Updated: 2023/05/17 14:32:55 by agallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,14 +96,11 @@ void	take_door(t_data_t *data)
 	{
 		item = &data->map->item->instances[i];
 		if (item->enabled)
-			break ;
-		else
-		{
-			check_door(data, &wall_down);
-			check_door(data, &wall_hight);
-			check_door(data, &wall_left);
-			check_door(data, &wall_right);
-		}
+			return ;
 		i++;
 	}
+	check_door(data, &wall_down);
+	check_door(data, &wall_hight);
+	check_door(data, &wall_left);
+	check_door(data, &wall_right);
 }

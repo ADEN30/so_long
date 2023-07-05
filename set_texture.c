@@ -6,7 +6,7 @@
 /*   By: agallet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 11:34:23 by agallet           #+#    #+#             */
-/*   Updated: 2023/03/07 13:44:14 by agallet          ###   ########.fr       */
+/*   Updated: 2023/06/26 10:24:16 by agallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "so_long.h"
@@ -38,6 +38,7 @@ void	set_door(t_data_t *data, int *x, int *y)
 
 	temp = data->map->door_close;
 	mlx_image_to_window(data->mlx, temp, *x, *y);
+	data->map->door_close->instances[0].z = 0;
 	temp = data->map->door;
 	mlx_image_to_window(data->mlx, temp, *x, *y);
 }

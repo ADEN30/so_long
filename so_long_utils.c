@@ -6,7 +6,7 @@
 /*   By: agallet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 12:51:48 by agallet           #+#    #+#             */
-/*   Updated: 2023/03/07 14:36:18 by agallet          ###   ########.fr       */
+/*   Updated: 2023/06/27 11:17:26 by agallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	*coordp(char **str)
 	return (NULL);
 }
 
-int	condition_letters(char c)
+int	condition_letters(char c, int *i, char **str)
 {
 	if (c != 'P' && c != 'E' && c != 'C' && c != '0' && c != '1' && c != '\n')
 		return (0);
@@ -75,6 +75,16 @@ int	around_map(char **str, int length)
 	return (1);
 }
 
+int	ft_strlen_sl(char *str, char c)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] && str[i] != c)
+		i++;
+	return (i);
+}
+
 int	check_line(char **str)
 {
 	int	i;
@@ -82,18 +92,18 @@ int	check_line(char **str)
 	int	length;
 
 	i = 0;
-	length = ft_strlen(str[i]);
+	length = ft_strlen_sl(str[i], '\n');
 	while (str[i])
 	{
 		j = 0;
 		while (str[i][j])
 		{
-			if (condition_letters(str[i][j]))
+			if (condition_letters(str[i][j], &i, str))
 				j++;
 			else
 				return (0);
 		}
-		if (length != ft_strlen(str[i]))
+		if (length != ft_strlen_sl(str[i], '\n'))
 			return (0);
 		i++;
 	}

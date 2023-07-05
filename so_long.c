@@ -6,7 +6,7 @@
 /*   By: agallet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 17:07:25 by agallet           #+#    #+#             */
-/*   Updated: 2023/03/07 14:38:13 by agallet          ###   ########.fr       */
+/*   Updated: 2023/06/26 10:34:08 by agallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "so_long.h"
@@ -99,7 +99,7 @@ int	main(int argc, char **argv)
 	if (!errors_file(argv[argc - 1], &data))
 		return (EXIT_FAILURE);
 	map = set_table_map(argv[argc - 1], &data);
-	mlx = mlx_init(data.width, data.height, "MLX42", false);
+	mlx = mlx_init(data.width, data.height, "MLX42", true);
 	if (!mlx)
 		return (EXIT_FAILURE);
 	set_data(&data, mlx, &txt);

@@ -6,7 +6,7 @@
 /*   By: agallet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 16:23:39 by agallet           #+#    #+#             */
-/*   Updated: 2023/03/07 13:44:15 by agallet          ###   ########.fr       */
+/*   Updated: 2023/06/26 10:44:33 by agallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,10 @@ void	all_texture(t_image_map_t *txt, mlx_t *mlx)
 	txt->item = set_images(mlx, "./png/SUPPORT_4A.png");
 	txt->door = set_images(mlx, "./png/HEDGE_1C.png");
 	txt->door_close = set_images(mlx, "./png/HEDGE_1A.png");
-	txt->character.down = set_images(mlx, "figure2_down.png");
-	txt->character.hight = set_images(mlx, "figure2_hight.png");
-	txt->character.left = set_images(mlx, "figure2_left.png");
-	txt->character.right = set_images(mlx, "figure2_right.png");
+	txt->character.down = set_images(mlx, "./png/figure2_down.png");
+	txt->character.hight = set_images(mlx, "./png/figure2_hight.png");
+	txt->character.left = set_images(mlx, "./png/figure2_left.png");
+	txt->character.right = set_images(mlx, "./png/figure2_right.png");
 }
 
 mlx_image_t	*get_image_character(t_image_map_t *txt, int i)

@@ -6,7 +6,7 @@
 /*   By: agallet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 13:02:59 by agallet           #+#    #+#             */
-/*   Updated: 2023/03/07 13:44:43 by agallet          ###   ########.fr       */
+/*   Updated: 2023/06/26 11:03:22 by agallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdio.h>
 # include <stdlib.h>
+# include <fcntl.h>
 # include "MLX42/MLX42.h"
 # include <memory.h>
 # include "get_next_line.h"

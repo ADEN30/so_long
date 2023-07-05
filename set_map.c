@@ -6,7 +6,7 @@
 /*   By: agallet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 11:58:49 by agallet           #+#    #+#             */
-/*   Updated: 2023/03/07 14:50:56 by agallet          ###   ########.fr       */
+/*   Updated: 2023/06/27 10:44:11 by agallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	check_format(char *str)
 	int	i;
 
 	i = 0;
-	while (str[i] != '.')
+	while (str[i] && str[i] != '.')
 		i++;
 	if (!ft_strncmp(&str[i], ".ber", ft_strlen(&str[i])))
 		return (1);
@@ -69,7 +69,7 @@ char	**save_map(char *file, int length, t_data_t *data)
 		return (NULL);
 	fd = open(file, O_RDONLY);
 	str = get_next_line(fd);
-	data->width = 64 * ft_strlen(str);
+	data->width = 64 * (ft_strlen(str) - 1);
 	while (str)
 	{
 		table[i++] = str;

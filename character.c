@@ -6,7 +6,7 @@
 /*   By: agallet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 14:27:54 by agallet           #+#    #+#             */
-/*   Updated: 2023/03/07 14:18:16 by agallet          ###   ########.fr       */
+/*   Updated: 2023/06/27 11:18:49 by agallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "so_long.h"
@@ -58,6 +58,7 @@ void	put_string(t_data_t *data)
 	if (data->text)
 		mlx_delete_image(mlx, data->text);
 	data->text = mlx_put_string(mlx, str, 0, 0);
+	ft_printf("%s\n", str);
 	free(str);
 }
 
